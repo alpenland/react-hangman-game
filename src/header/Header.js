@@ -11,11 +11,12 @@ const Header = () => {
             <StyledHeader>Hangman</StyledHeader>
             <p>
                 Choose a category. Guess one letter at a time to figure out the word or phrase. <br />
-                You have 7 lives. Each wrong guess costs 1 life. Good luck! <br /><br />
-                Choose a new category to start over or play again.    
+                You have 7 lives. Each wrong guess costs 1 life. Good luck! <br /><br />    
             </p>
         </div>
     )
 };
 
 export default Header;
+
+//Choose a new category to start over or play again.
