@@ -1,0 +1,2 @@
+export const SELECT_CATEGORY = 'SELECT_CATEGORY';
+export const DISABLE_BUTTON = 'DISABLE_BUTTON';

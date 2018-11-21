@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Hangman
+        </h2>,
+        <p>
+          Choose a category. Guess one letter at a time to figure out the word or phrase. You have 7 lives. Each wrong guess costs 1 life. Good luck!
+        </p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Hangman",
+        },
+        "ref": null,
+        "rendered": "Hangman",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Choose a category. Guess one letter at a time to figure out the word or phrase. You have 7 lives. Each wrong guess costs 1 life. Good luck!",
+        },
+        "ref": null,
+        "rendered": "Choose a category. Guess one letter at a time to figure out the word or phrase. You have 7 lives. Each wrong guess costs 1 life. Good luck!",
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Hangman
+          </h2>,
+          <p>
+            Choose a category. Guess one letter at a time to figure out the word or phrase. You have 7 lives. Each wrong guess costs 1 life. Good luck!
+          </p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Hangman",
+          },
+          "ref": null,
+          "rendered": "Hangman",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Choose a category. Guess one letter at a time to figure out the word or phrase. You have 7 lives. Each wrong guess costs 1 life. Good luck!",
+          },
+          "ref": null,
+          "rendered": "Choose a category. Guess one letter at a time to figure out the word or phrase. You have 7 lives. Each wrong guess costs 1 life. Good luck!",
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
