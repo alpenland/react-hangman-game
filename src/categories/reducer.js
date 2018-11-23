@@ -14,8 +14,7 @@ const initialState = {
                 'CUBA',
                 'RUSSIA',
                 'CANADA'
-            ],
-            disabled: false
+            ]
         },
         {
             title: 'Beers & Breweries',
@@ -31,8 +30,7 @@ const initialState = {
                 'CORONA',
                 'HEINEKEN',
                 'NEWCASTLE'
-            ],
-            disabled: false
+            ]
         },
         {
             title: 'Board Games',
@@ -48,8 +46,7 @@ const initialState = {
                 'DOMINION',
                 'PICTIONARY',
                 'BACKGAMMON'
-            ],
-            disabled: false
+            ]
         },
         {
             title: 'Movies',
@@ -65,8 +62,7 @@ const initialState = {
                 'OVERLORD',
                 'JAWS',
                 'PSYCHO'
-            ],
-            disabled: false
+            ]
         },
         {
             title: 'Animals',
@@ -82,13 +78,13 @@ const initialState = {
                 'FLAMINGO',
                 'IGUANA',
                 'LEMUR'
-            ],
-            disabled: false
+            ]
         }
     ],
     chosenWord: [],
     remainingLives: 7,
-    validGuesses: []
+    validGuesses: [],
+    clickedCategory: ''
 };
 
 const categoryReducer = (state = initialState, action) => {
@@ -100,7 +96,7 @@ const categoryReducer = (state = initialState, action) => {
                 ),
                 remainingLives: 7,
                 categories: state.categories,
-                chosenCategory: action.value
+                clickedCategory: action.value
             }
         case 'NEW_GAME':
             return initialState

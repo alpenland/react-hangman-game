@@ -18,5 +18,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//Choose a new category to start over or play again.

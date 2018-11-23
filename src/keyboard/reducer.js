@@ -4,7 +4,7 @@ const initialState = {
     winGame: false,
     loseGame: false,
     alphabet: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
-    disbled: false
+    clickedLetters: []
 }
 
 export const keyboardReducer = (state = initialState, action) => {
@@ -15,7 +15,8 @@ export const keyboardReducer = (state = initialState, action) => {
                 remainingLives: state.remainingLives,
                 winGame: state.winGame,
                 loseGame: state.loseGame,
-                alphabet: state.alphabet
+                alphabet: state.alphabet,
+                clickedLetters: state.clickedLetters
             }
         case 'DECREMENT_LIFE':
             return {
@@ -23,7 +24,8 @@ export const keyboardReducer = (state = initialState, action) => {
                 validGuesses: state.validGuesses,
                 winGame: state.winGame,
                 loseGame: state.loseGame,
-                alphabet: state.alphabet
+                alphabet: state.alphabet,
+                clickedLetters: state.clickedLetters
             }
         case 'WIN_GAME':
             return {
@@ -31,7 +33,8 @@ export const keyboardReducer = (state = initialState, action) => {
                 loseGame: state.loseGame,
                 validGuesses: state.validGuesses,
                 remainingLives: state.remainingLives,
-                alphabet: state.alphabet
+                alphabet: state.alphabet,
+                clickedLetters: state.clickedLetters
             }
         case 'LOSE_GAME':
             return {
@@ -39,7 +42,17 @@ export const keyboardReducer = (state = initialState, action) => {
                 winGame: state.winGame,
                 validGuesses: state.validGuesses,
                 remainingLives: state.remainingLives,
-                alphabet: state.alphabet
+                alphabet: state.alphabet,
+                clickedLetters: state.clickedLetters
+            }
+        case 'CLICKED_LETTER':
+            return {
+                loseGame: state.loseGame,
+                winGame: state.winGame,
+                validGuesses: state.validGuesses,
+                remainingLives: state.remainingLives,
+                alphabet: state.alphabet,
+                clickedLetters: state.clickedLetters.concat([action.letter])
             }
         case 'SELECT_CATEGORY':
             return initialState

@@ -6,24 +6,20 @@ import { selectCategory } from './actions';
 import RemainingLives from '../remainingLives/RemainingLives';
 import ChosenWord from '../chosenWord/ChosenWord';
 
-const Button = styled.button`
-    background-color: #1ebbd7;
-    color: white;
-    padding: 10px;
+import { Button } from '../button/Button'
+
+const CategoryButton = styled(Button)`
+    padding: 2.2%;
     font-size: 1.1em;
-    margin: 5px;
-    border-radius: 5px;
-    border: 0;
-
-    &:disabled {
-        background-color: #d2f1f7;
-        color: #1ebbd7;
-        border: white;
-    }
-
-    &:hover {
-        background-color: #a5e3ef;
-    }
+    margin: 0.8%;
+`
+const ClickedCategoryButton = styled(Button)`
+    padding: 2.2%;
+    font-size: 1.1em;
+    margin: 0.8%;
+    background-color: #d2f1f7;
+    color: #1ebbd7;
+    border: white;
 `
 
 class Categories extends React.Component {
@@ -31,7 +27,6 @@ class Categories extends React.Component {
         let category = currentTarget.value;
         let i = Math.floor(Math.random() * 9);
         this.props.selectCategory(category,i);
-        currentTarget.disabled = true;
     };
     render () {
         return (
@@ -39,16 +34,27 @@ class Categories extends React.Component {
                 <p>
                     {
                         this.props.categories.map((category) => {
-                            return (
-                                <Button
-                                    value={category.value}
-                                    key={category.value}
-                                    onClick={this.handleChooseCategory}
-                                    disabled={category.disabled}
-                                >
-                                    {category.title}
-                                </Button>
-                            )
+                            if (this.props.clickedCategory === category.value) {
+                                return (
+                                    <ClickedCategoryButton
+                                        value={category.value}
+                                        key={category.value}
+                                        onClick={this.handleChooseCategory}
+                                    >
+                                        {category.title}
+                                    </ClickedCategoryButton>                                                                        
+                                )
+                            } else {
+                                return (
+                                    <CategoryButton
+                                        value={category.value}
+                                        key={category.value}
+                                        onClick={this.handleChooseCategory}
+                                    >
+                                        {category.title}
+                                    </CategoryButton>
+                                )
+                            }
                         })
                     }
                 </p>
@@ -59,10 +65,9 @@ class Categories extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    remainingLives: state.keyboard.remainingLives,
-    chosenCategory: state.category.chosenCategory,
-    categories: state.category.categories
+const mapStateToProps = (state) => ({ 
+    categories: state.category.categories,
+    clickedCategory: state.category.clickedCategory 
 });
 
 export default connect( mapStateToProps, { selectCategory })(Categories);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import Categories from '../categories/Categories';
@@ -16,16 +17,22 @@ const GameWrapper = styled.div`
     color: #005073;
 `
 
-const Hangman = () => {
-    return (
-        <GameWrapper>
-            <Header />
-            <Categories />
-            <Keyboard />
-        </GameWrapper>
-    )
-};
+class Hangman extends React.Component {
+    render () {
+        return (
+            <GameWrapper>
+                <Header />
+                <StatusBar />
+                <Categories />
+                <Keyboard />
+            </GameWrapper>
+        )
+    }
+}
 
-export default Hangman;
+const mapStateToProps = (state) => ({
+    winCount: state.status.winCount,
+    lossCount: state.status.lossCount
+});
 
-//<StatusBar />
+export default connect(mapStateToProps)(Hangman);

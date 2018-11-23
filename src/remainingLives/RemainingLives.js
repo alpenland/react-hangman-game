@@ -10,9 +10,9 @@ import fourWrong from '../images/four-wrong.png';
 import fiveWrong from '../images/five-wrong.png';
 import sixWrong from '../images/six-wrong.png';
 import lose from '../images/you-lose.png';
-import win from '../images/you-win2.png';
+import win from '../images/you-win3.png';
 
-import { newGame } from '../hangman/actions';
+import { newGame } from './actions';
 
 const Button = styled.button`
     width: 25%;
@@ -36,6 +36,7 @@ class RemainingLives extends React.Component {
             return (
                 <div>
                     <img src={win} alt="you win"/><br />
+                    <Button onClick={this.props.newGame}>Play Again</Button>
                 </div>
             )
         } else if (this.props.remainingLives === 7) {
@@ -65,8 +66,7 @@ class RemainingLives extends React.Component {
 
 const mapStateToProps = (state) => ({
     remainingLives: state.keyboard.remainingLives,
-    winGame: state.keyboard.winGame,
-    loseGame: state.keyboard.loseGame
+    winGame: state.keyboard.winGame
 });
 
 export default connect(mapStateToProps, {newGame})(RemainingLives);
