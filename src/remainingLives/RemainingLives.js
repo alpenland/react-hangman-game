@@ -10,20 +10,14 @@ import fourWrong from '../images/four-wrong.png';
 import fiveWrong from '../images/five-wrong.png';
 import sixWrong from '../images/six-wrong.png';
 import lose from '../images/you-lose.png';
-import win from '../images/you-win3.png';
+import win from '../images/you-win2.png';
 
 import { newGame } from './actions';
+import { Button } from '../button/Button'
 
-const Button = styled.button`
-    width: 25%;
-    padding: 8px;
-    border: 1px solid;
-    border-radius: 5px;
+const NewGameButton = styled(Button)`
     background-color: #FFA500;
-    color: white;
-    margin: 3%;
-    font-size: 1.5em;
-    fint-weight: bold;
+    margin-bottom: 3%;
 
     &:hover {
         background-color: #FFC04C;
@@ -36,7 +30,7 @@ class RemainingLives extends React.Component {
             return (
                 <div>
                     <img src={win} alt="you win"/><br />
-                    <Button onClick={this.props.newGame}>Play Again</Button>
+                    <NewGameButton onClick={this.props.newGame}>Play Again</NewGameButton>
                 </div>
             )
         } else if (this.props.remainingLives === 7) {
@@ -57,7 +51,7 @@ class RemainingLives extends React.Component {
             return (
                 <div>
                     <img src={lose} alt="you lose"/><br />
-                    <Button onClick={this.props.newGame}>Play Again</Button>
+                    <NewGameButton onClick={this.props.newGame}>Play Again</NewGameButton>
                 </div>
             )
         } 
@@ -65,7 +59,7 @@ class RemainingLives extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    remainingLives: state.keyboard.remainingLives,
+    remainingLives: state.lives.remainingLives,
     winGame: state.keyboard.winGame
 });
 

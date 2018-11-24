@@ -13,6 +13,8 @@ it('should render Categories component', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-it('should render 5 category buttons', () => {
-    expect(wrapper.find('button').length).toBe(5);
+it('should render 1 p tag, ChosenWord, and RemainingLives', () => {
+    expect(wrapper.find('p').length).toBe(1);
+    expect(wrapper.find('ChosenWord').length).toBe(1);
+    expect(wrapper.find('RemainingLives').length).toBe(1);
 });

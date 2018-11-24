@@ -3,20 +3,16 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { selectCategory } from './actions';
-import RemainingLives from '../remainingLives/RemainingLives';
 import ChosenWord from '../chosenWord/ChosenWord';
-
 import { Button } from '../button/Button'
 
 const CategoryButton = styled(Button)`
     padding: 2.2%;
     font-size: 1.1em;
-    margin: 0.8%;
 `
 const ClickedCategoryButton = styled(Button)`
     padding: 2.2%;
     font-size: 1.1em;
-    margin: 0.8%;
     background-color: #d2f1f7;
     color: #1ebbd7;
     border: white;
@@ -25,7 +21,7 @@ const ClickedCategoryButton = styled(Button)`
 class Categories extends React.Component {
     handleChooseCategory = ({currentTarget}) => {
         let category = currentTarget.value;
-        let i = Math.floor(Math.random() * 9);
+        let i = Math.floor(Math.random() * 34);
         this.props.selectCategory(category,i);
     };
     render () {
@@ -59,7 +55,6 @@ class Categories extends React.Component {
                     }
                 </p>
                 <ChosenWord />
-                <RemainingLives />
             </div>
         )
     }

@@ -1,4 +1,5 @@
-import { selectCategory, newGame } from '../actions';
+import { selectCategory } from '../actions';
+import { newGame } from '../../remainingLives/actions;'
 
 it('should setup SELECT_CATEGORY action', () => {
     let title = 'countries';

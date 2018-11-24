@@ -2,21 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { decrementLife, validGuess, winGame, loseGame, clickedLetter } from './actions';
+import { validGuess, winGame, clickedLetter } from './actions';
+import { decrementLife } from '../remainingLives/actions'
 import { incrementLossCounter, incrementWinCounter } from '../statusBar/actions';
 import { Button } from '../button/Button';
 import { KeyboardWrapper } from './KeyboardWrapper';
 
 const LetterButton = styled(Button)`
     width: 7.5%;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    margin: 0;
 `
 const ClickedLetterButton = styled(Button)`
     width: 7.5%;
-    font-size: 0.9em;
+    font-size: 0.95em;
     background-color: #d2f1f7;
     color: #1ebbd7;
-    border: white;
+    margin: 0;
 `
 class Keyboard extends React.Component {
     handleOnClick = ({currentTarget}) => {
@@ -84,7 +86,6 @@ export default connect(mapStateToProps, {
     decrementLife, 
     validGuess, 
     winGame, 
-    loseGame,
     incrementWinCounter,
     incrementLossCounter,
     clickedLetter
