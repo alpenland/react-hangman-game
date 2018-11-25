@@ -17,6 +17,18 @@ const ListItem = styled.li`
     border-radius: 15%;
     height: 25px;
     border: 1px solid #1ebbd7;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1em;
+        width: 16px;
+        height: 19px
+    }
+
+    @media screen and (max-width: 375px) {
+        font-size: .9em;
+        width: 12px;
+        height: 14px
+    }
 `
 const Letter = styled.div`
     color: white;

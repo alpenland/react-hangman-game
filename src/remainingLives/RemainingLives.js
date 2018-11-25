@@ -23,34 +23,38 @@ const NewGameButton = styled(Button)`
         background-color: #FFC04C;
     }
 `
+const Image = styled.img`
+    width: 50%;
+    height: auto;
+`
 
 class RemainingLives extends React.Component {
     render () {
         if (this.props.winGame === true) {
             return (
                 <div>
-                    <img src={win} alt="you win"/><br />
+                    <Image src={win} alt="you win"/><br />
                     <NewGameButton onClick={this.props.newGame}>Play Again</NewGameButton>
                 </div>
             )
         } else if (this.props.remainingLives === 7) {
-            return (<img src={start} alt="7 lives left"/>)
+            return (<Image src={start} alt="7 lives left"/>)
         } else if (this.props.remainingLives === 6) {
-            return (<img src={oneWrong} alt="6 lives left"/>)
+            return (<Image src={oneWrong} alt="6 lives left"/>)
         } else if (this.props.remainingLives === 5) {
-            return (<img src={twoWrong} alt="5 lives left"/>)
+            return (<Image src={twoWrong} alt="5 lives left"/>)
         } else if (this.props.remainingLives === 4) {
-            return (<img src={threeWrong} alt="4 lives left"/>)
+            return (<Image src={threeWrong} alt="4 lives left"/>)
         } else if (this.props.remainingLives === 3) {
-            return (<img src={fourWrong} alt="3 lives left"/>)
+            return (<Image src={fourWrong} alt="3 lives left"/>)
         } else if (this.props.remainingLives === 2) {
-            return (<img src={fiveWrong} alt="2 lives left"/>)
+            return (<Image src={fiveWrong} alt="2 lives left"/>)
         } else if (this.props.remainingLives === 1) {
-            return (<img src={sixWrong} alt="1 life left"/>)
+            return (<Image src={sixWrong} alt="1 life left"/>)
         } else if (this.props.remainingLives === 0) {
             return (
                 <div>
-                    <img src={lose} alt="you lose"/><br />
+                    <Image src={lose} alt="you lose"/><br />
                     <NewGameButton onClick={this.props.newGame}>Play Again</NewGameButton>
                 </div>
             )
