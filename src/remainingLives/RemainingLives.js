@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
+
+import { NewGameButton } from '../styledComponents/Button'
+import { Image } from '../styledComponents/Image';
 
 import start from '../images/start.png';
 import oneWrong from '../images/one-wrong.png';
@@ -13,20 +15,6 @@ import lose from '../images/you-lose.png';
 import win from '../images/you-win2.png';
 
 import { newGame } from './actions';
-import { Button } from '../button/Button'
-
-const NewGameButton = styled(Button)`
-    background-color: #FFA500;
-    margin-bottom: 3%;
-
-    &:hover {
-        background-color: #FFC04C;
-    }
-`
-const Image = styled.img`
-    width: 50%;
-    height: auto;
-`
 
 class RemainingLives extends React.Component {
     render () {
